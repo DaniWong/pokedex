@@ -3,28 +3,29 @@
 This is a back end component for the Pokedex project.
 Stack: Python, Django, sqlite
 
-## Available Scripts
+## How to run the application?
 
 In the project directory, you can run:
 
 ### `pip install -r requirements.txt`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Installs all requirements for the app.
 
 ### `python manage.py migrate`
 
-Launches the test runner in the interactive watch mode.
-
-No test are avilable at this time
-
-### `python manage.py test`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
+Applies all migrations needed in the database.
 
 ### `python manage.py runserver`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Runs the app in the debug mode.\
+Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
+
+Note: You can access to django admin just open [http://localhost:8000/admin](http://localhost:8000/admin) to view it.
+For to be able to access you need to create a super user with python manage.py createsuperuser.
+
+## Additional scripts
+
+### `python manage.py test`
+
+Launches all avilable tests.
+Test are available: For check api rest and api pokemon. 
