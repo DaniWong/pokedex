@@ -13,7 +13,7 @@ class PokemonViewSet(viewsets.ModelViewSet):
     queryset = Pokemon.objects.all()
 
     def validate_auth(self):
-        token_auth_provided = self.request.META[HEADER_AUTH]
+        token_auth_provided = self.request.META.get(HEADER_AUTH, '')
         if token_auth_provided != AUTH_TOKEN:
             raise PermissionDenied
     
