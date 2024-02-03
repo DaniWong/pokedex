@@ -19,7 +19,10 @@ class PokemonApi(object):
 
 
 def get_or_create_pokemon(pokemon_name: str) -> Optional[Pokemon]:
-    pokemon_found_in_db = Pokemon.objects.filter(name=pokemon_name).first()
+    if pokemon_name.isnumeric():
+        pokemon_found_in_db = Pokemon.objects.filter(external_id=pokemon_name).first()
+    else:
+        pokemon_found_in_db = Pokemon.objects.filter(name=pokemon_name).first()
     if not pokemon_found_in_db:
         pokemon_found_in_api = PokemonApi().get_pokemon(pokemon_name)
         if not pokemon_found_in_api:
